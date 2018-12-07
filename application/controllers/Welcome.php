@@ -19,17 +19,27 @@ class Welcome extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 
-public function __construct()
-	{
+// public function __construct()
+// 	{
+// 		parent::__construct();
+// 		if (!$this->ion_auth->logged_in()) {
+//             redirect('auth/login', 'refresh');
+//         }
+
+// 	}
+
+
+	function __construct() {
 		parent::__construct();
-		if (!$this->ion_auth->logged_in()) {
-            redirect('auth/login', 'refresh');
-        }
+		
 	}
 
-	
-	public function index()
+	public function _example_output($output = null)
 	{
-		$this->load->view('welcome_message');
+		$this->load->view('home.php');
 	}
+
+
+	
+	
 }
