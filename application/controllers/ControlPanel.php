@@ -5,12 +5,26 @@
 	 */
 	class ControlPanel extends CI_Controller {
 		
-		function __construct() {
-			parent::__construct();
-			$this->load->database();
-			$this->load->helper('url');
-			$this->load->library('grocery_CRUD');
-		}
+		// function __construct() {
+		// 	parent::__construct();
+		// 	$this->load->database();
+		// 	$this->load->helper('url');
+		// 	$this->load->library('grocery_CRUD');
+		// 	if (!$this->ion_auth->logged_in()) {
+		// 		redirect('auth/login', 'refresh');
+		// 	}
+		// }
+
+		public function __construct()
+	{
+		parent::__construct();
+		$this->load->library('grocery_CRUD');
+
+		if (!$this->ion_auth->logged_in()) {
+            redirect('auth/login', 'refresh');
+
+        }
+   }
 
 		public function _example_output($output = null)
 		{
@@ -48,7 +62,7 @@
 				$crud = new grocery_CRUD();
 
 				$crud->set_theme('Flexigrid');
-				$crud->set_table('calzz');
+				$crud->set_table('clazz');
 				$crud->set_subject('Class');
 				$crud->columns('id','name');
 				$output = $crud->render();
@@ -70,6 +84,7 @@
 				$crud->set_subject('Financial Student');
 				$crud->columns('id','student_id','financial_total','creation_at','updated_at','reason_updated_at');
 				$crud->set_relation('student_id','student','first_name');
+				$crud->unset_delete();
 				$output = $crud->render();
 
 				$this->_example_output($output);
@@ -110,7 +125,7 @@
 				$crud->set_subject('Student Point');
 				$crud->columns('id','student_id','material_id','point');
 				$crud->set_relation('student_id','student','first_name');
-				$crud->set_relation('material_id','material','name');
+				$crud->set_relation('material_id','materials','name');
 				$output = $crud->render();
 
 				$this->_example_output($output);
@@ -131,6 +146,7 @@
 				$crud->set_subject('Student Point Log');
 				$crud->columns('id','student_id','points','reason');
 				$crud->set_relation('student_id','student','first_name');
+				$crud->unset_add()->unset_delete()->unset_edit();
 				$output = $crud->render();
 
 				$this->_example_output($output);

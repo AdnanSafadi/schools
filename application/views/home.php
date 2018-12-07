@@ -37,49 +37,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <body class="nav-md">
         <div class="container body">
             <div class="main_container">
-                <div class="col-md-3 left_col">
-                    <div class="left_col scroll-view">
-                        <div class="navbar nav_title" style="border: 0;">
-                            <a href="<?php echo base_url('Control_Panel/brand'); ?>" class="site_title"><i class="fa fa-paw"></i> <span>Control Panel</span></a>
-                        </div>
+             <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="<?php echo base_url('Order'); ?>" class="site_title"><i class="fa fa-paw"></i> <span>Control Panel</span></a>
+                    </div>
 
-                        <div class="clearfix"></div>
+                    <div class="clearfix"></div>
 
-                        <!-- menu profile quick info -->
-                        <div class="profile clearfix">
+                    <!-- menu profile quick info -->
+                    <div class="profile clearfix">
 
-                            <div class="profile_info">
+                        <div class="profile_info">
 
-                                <h2>Welcome Admin</h2>
-                            </div>
-                        </div>
-                        <!-- /menu profile quick info -->
-
-                        <br />
-
-                        <!-- sidebar menu -->
-                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-                            <div class="menu_section">
-                                <h3>General</h3>
-                                <ul class="nav side-menu">
-                                    <li><a href="<?php echo site_url('Control_Panel/home'); ?>"><i class="fa fa-home"></i>Home Slider</a> </li>
-                                    <li><a><i class="fa fa-bitcoin"></i> All Brands <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="<?php echo site_url('Control_Panel/brands') ?>">Brands</a></li>
-                                            <li><a href="<?php echo site_url('Control_Panel/promotions') ?>">Promotions</a></li>
-                                            <li><a href="<?php echo site_url('Control_Panel/merchandising') ?>">Merchandising</a></li>
-
-
-                                        </ul>
-                                    </li>
-                                    <li><a href="<?php echo site_url('Control_Panel/news'); ?>"><i class="fa fa-edit"></i> News</a> </li>
-                                    <li><a href="<?php echo site_url('Control_Panel/info/edit/1') ?>">About</a></li>
-                                    <li><a href="<?php echo site_url('Control_Panel/subscriber') ?>">Subscriber</a></li>
-                                </ul>
-                            </div>
+                            <h2>Welcome Admin</h2>
                         </div>
                     </div>
-                </div>
+                    <!-- /menu profile quick info -->
+
+                    <br />
+
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>General</h3>
+                            <ul class="nav side-menu">
+                               <li><a href="<?php echo site_url('ControlPanel/students'); ?>"><i class="fa fa-user"></i>Students</a> </li>
+                                <li><a href="<?php echo site_url('ControlPanel/calzz'); ?>"><i class="fa fa-home"></i>Class</a> </li>
+                                 <li><a href="<?php echo site_url('ControlPanel/financial_student'); ?>"><i class="fa fa-home"></i>Financial Student</a> </li>
+                               <li><a href="<?php echo site_url('ControlPanel/materials'); ?>"><i class="fa fa-home"></i>Materials</a> </li>
+                               <li><a href="<?php echo site_url('ControlPanel/student_points'); ?>"><i class="fa fa-home"></i>Student Points</a> </li>
+                               
+                                 <li><a href="<?php echo site_url('ControlPanel/student_points_log'); ?>"><i class="fa fa-home"></i>Student Points Log</a> </li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+           </div>
 
                 <!-- top navigation -->
                 <div class="top_nav">

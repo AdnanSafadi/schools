@@ -1,6 +1,3 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -59,9 +56,3 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div> <!-- /login-extra -->
 </body>
 </html> 
-
-<!-- end document-->
-
-
-
-
