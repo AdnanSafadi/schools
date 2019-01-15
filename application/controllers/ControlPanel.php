@@ -42,7 +42,7 @@
 			try{
 				$crud = new grocery_CRUD();
 
-				$crud->set_theme('Flexigrid');
+				$crud->set_theme('datatables');
 				$crud->set_table('student');
 				$crud->set_subject('Student');
 				$crud->columns('user_key','first_name','last_name','father_name','email');
@@ -68,7 +68,7 @@
 			try{
 				$crud = new grocery_CRUD();
 
-				$crud->set_theme('Flexigrid');
+				$crud->set_theme('datatables');
 				$crud->set_table('clazz');
 				 $crud->set_subject('Class');
 				 $crud->columns('id','name');
@@ -87,7 +87,7 @@
 			try{
 				$crud = new grocery_CRUD();
 
-				$crud->set_theme('Flexigrid');
+				$crud->set_theme('datatables');
 				$crud->set_table('financial_student');
 				$crud->set_subject('Financial Student');
 				$crud->columns('id','student_id','financial_total','creation_at','updated_at','reason_updated_at');
@@ -114,7 +114,7 @@
 			try{
 				$crud = new grocery_CRUD();
 
-				$crud->set_theme('Flexigrid');
+				$crud->set_theme('datatables');
 				$crud->set_table('materials');
 				$crud->set_subject('Materials');
 				$crud->columns('id','name','creation_at','updated_at');
@@ -137,7 +137,7 @@
 
 				$crud = new grocery_CRUD();
 
-				$crud->set_theme('Flexigrid');
+				$crud->set_theme('datatables');
 				$crud->set_table('sun_materials');
 				$crud->set_subject('Sub Materials');
 				$crud->columns('id','name','material_id');
@@ -160,7 +160,7 @@
 			try{
 				$crud = new grocery_CRUD();
 
-				$crud->set_theme('Flexigrid');
+				$crud->set_theme('datatables');
 				$crud->set_table('student_point');
 				$crud->set_subject('Student Point');
 				$crud->columns('id','student_id','material_id','point');
