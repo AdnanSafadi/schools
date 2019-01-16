@@ -42,7 +42,7 @@
 			try{
 				$crud = new grocery_CRUD();
 
-				$crud->set_theme('datatables');
+				$crud->set_theme('flexigrid');
 				$crud->set_table('student');
 				$crud->set_subject('Student');
 				$crud->columns('user_key','first_name','last_name','father_name','email');
