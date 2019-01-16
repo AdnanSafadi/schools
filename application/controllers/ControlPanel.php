@@ -34,7 +34,8 @@
 		public function index()
 		{
 			//$this->load->view('home.php');
-			$this->students();
+			//$this->students();
+			redirect('Control_Panel/students');
 		}
 
 		public function students()
