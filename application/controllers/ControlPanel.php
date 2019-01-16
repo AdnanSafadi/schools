@@ -51,7 +51,7 @@
 				$crud->add_fields('user_key','first_name','last_name','father_name','email','address','class_id','image');
 				$crud->edit_fields('user_key','first_name','last_name','father_name','email','address','class_id','image');
 
-				$crud->required_fields('user_key','first_name','last_name','father_name','email','address','class_id');
+				$crud->required_fields('user_key','first_name','last_name','father_name','class_id');
 				//$crud->set_field_upload('image','assets/uploads/studentImage');	
 				$crud->callback_before_insert(array($this,'set_created_at_callback'));			
 				$output = $crud->render();
