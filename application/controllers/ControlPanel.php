@@ -35,7 +35,7 @@
 		{
 			//$this->load->view('home.php');
 			//$this->students();
-			redirect('Control_Panel/students');
+			redirect('ControlPanel/students');
 		}
 
 		public function students()
