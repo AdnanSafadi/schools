@@ -33,7 +33,7 @@ public function __construct()
 		$this->load->view('welcome_message');
 	}
 
- public function menu_list() {
+ public function student_point_list() {
  	
  	//echo "string";
  	$student_id = $this->input->post("student_id"); 
