@@ -44,5 +44,17 @@ class Api extends CI_Controller {
 	}
 	echo json_encode($output);
 }
+
+public function student_point_list() {
+ 	
+ 	//echo "string";
+ 	$student_id = $this->input->post("student_id"); 
+ 
+    $this->load->model('Schools_Core_model');
+    $output = $this->Schools_Core_model->get_student_point($student_id);
+    $out = array('data' => $output ,'status' => true, 'message' => '');
+    echo json_encode($out);
+}
+
 	
 }
