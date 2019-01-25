@@ -56,5 +56,18 @@ public function student_point_list() {
     echo json_encode($out);
 }
 
+public function check_student_auth() {
+	$student_id = $this->input->post("student_id"); 
+	$password = $this->input->post("password");
+    $output = $this->Schools_Core_model->check_student($student_id,$password);
+    if ($output == false) {
+    	 $out = array('data' => '' ,'status' => false, 'message' => '505');
+    }else {
+    	 $out = array('data' => $output ,'status' => true, 'message' => '');
+    }
+   
+    echo json_encode($out); 
+}
+
 	
 }
