@@ -1,0 +1,153 @@
+.right_section {
+    float: right;
+    margin-top: 30px;
+
+}
+
+.left_section {
+    float : left; 
+
+}
+
+#number {
+    text-align: right ;
+    direction: rtl ;
+    margin-right: 13px ;
+
+}
+
+#message_text {
+    height: 80px;
+    width: 250px;
+    direction:  rtl ; 
+    padding: 12px ; 
+    max-height: 200px;
+    max-width: 453px;
+    min-height: 200px;
+    min-width: 453px;
+}
+
+#remaining , #messages {
+    direction: rtl ;
+    font-size: 17px ;
+    font-weight: bold ; 
+    color : #9a9b9a ;
+
+
+}
+
+.title_numbers {
+    font-size: 20px ;
+    text-align: right ;
+    margin-bottom: 9px; 
+    color : #9a9b9a ;
+}
+
+
+.message_title {
+    font-size: 20px ;
+    text-align: right ;
+    margin-bottom: 9px; 
+    color : #9a9b9a ;
+    padding-right: 5px ; 
+}
+
+
+
+.phone_numbers {
+
+    background: whitesmoke none repeat scroll 0 0;
+    border: 1px solid whitesmoke;
+    margin: 0 0 8px;
+    max-height:  400px ;
+    min-height:  400px ;
+    min-width: 600px ;
+    max-width: 600px ;
+    float: right; 
+    overflow: auto ;
+    padding: 15px ;
+}
+
+
+
+#filename {
+    width: 310px;
+}
+
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin-left:  10px;
+    margin-bottom:   10px;
+    margin-top:   8px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.w50{
+
+    min-width: 60px ;
+    text-align: center ;
+}
+
+.w100{
+
+    min-width: 100px ;
+    text-align: center ;
+}
+
+.err_ {
+
+    border-radius: 4px;
+    margin-top: 6px ;
+    margin-bottom: 9px ;
+    text-align: right;
+    direction: rtl ;
+    font-size: 15px ;
+
+
+}
+
+.padd {
+
+    margin: 14px ;
+    text-align: right;
+    direction: rtl ; 
+    font-size: 15px ;
+
+}
+
+
+
+.alert-success {
+    text-align: right;
+    direction: rtl;
+    
+}
+
+
+form .text, form select, form textarea, input.text, input.file, .placeholder_label, select.text  {
+    background: #f9f9f9 none repeat scroll 0 0;
+    border: 1px solid #c6c6c6;
+    box-shadow: none;
+    font-size: 12pt;
+    margin-bottom: 15px;
+    padding: 13px;
+}
+
+input[type="text"] {
+        background: #f9f9f9 none repeat scroll 0 0;
+    border: 1px solid #c6c6c6;
+    box-shadow: none;
+    
+}

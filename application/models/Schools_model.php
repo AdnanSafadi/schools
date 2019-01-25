@@ -23,7 +23,9 @@ public function __destruct() {
 }
 
 
-
+/*
+SELECT st.id, st.material_id as materials , st.point as studentPoint ,m.point as materialPoint FROM `student_point` as st INNER JOIN materials AS m ON m.id = st.student_id WHERE st.id = 1 
+/
 
 
 
