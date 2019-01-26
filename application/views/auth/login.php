@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Login - Zenbarakji UCM</title>
+        <title>لوحة التحكم</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">   
         <!-- Styles -->
@@ -30,9 +30,8 @@
                     </div> 
                 <?php } ?>
                 <?php echo form_open("auth/login");?>
-                    <h1>Zenbarakji UCM</h1>    
+                    <h1>لوحة تحكم التطبيق</h1>    
                     <div class="login-fields">
-                        <p>Sign in to access Zenbarakji UCM :</p>
                         <div class="field">                             
                             <input class="login username-field" type="text" placeholder="Email" name="identity" value="<?php echo set_value('identity'); ?>" size="50" />
                         </div> <!-- /field -->

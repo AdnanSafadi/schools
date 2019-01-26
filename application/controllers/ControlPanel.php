@@ -46,14 +46,14 @@
 				$crud->set_theme('flexigrid');
 				$crud->set_table('student');
 				$crud->set_subject('Student');
-				$crud->columns('user_key','first_name','last_name','father_name','email');
+				$crud->columns('user_key','first_name','last_name','father_name','email','password','class_id');
 				$crud->set_relation('class_id','clazz','name');
 
-				$crud->add_fields('user_key','first_name','last_name','father_name','email','address','class_id','image');
-				$crud->edit_fields('user_key','first_name','last_name','father_name','email','address','class_id','image');
+				$crud->add_fields('user_key','first_name','last_name','father_name','email','address','password','class_id','image');
+				$crud->edit_fields('user_key','first_name','last_name','father_name','email','address','password','class_id','image');
 
 				$crud->required_fields('user_key','first_name','last_name','father_name','class_id');
-				//$crud->set_field_upload('image','assets/uploads/studentImage');	
+				$crud->set_field_upload('image','assets/uploads');	
 				$crud->callback_before_insert(array($this,'set_created_at_callback'));			
 				$output = $crud->render();
 
@@ -118,10 +118,10 @@
 				$crud->set_theme('flexigrid');
 				$crud->set_table('materials');
 				$crud->set_subject('Materials');
-				$crud->columns('id','name','creation_at','updated_at');
-				$crud->add_fields('name');
-				$crud->edit_fields('name');
-				$crud->required_fields('name');
+				$crud->columns('id','name','point','material_number','creation_at','updated_at');
+				$crud->add_fields('name','point','material_number');
+				$crud->edit_fields('name','point','material_number');
+				$crud->required_fields('name','point','material_number');
 				$crud->callback_before_insert(array($this,'set_created_at_callback'));	
 				$output = $crud->render();
 
@@ -165,7 +165,7 @@
 				$crud->set_table('student_point');
 				$crud->set_subject('Student Point');
 				$crud->columns('id','student_id','material_id','point');
-				$crud->set_relation('student_id','student','first_name');
+				$crud->set_relation('student_id','student','user_key');
 				$crud->set_relation('material_id','materials','name');
 				$output = $crud->render();
 
