@@ -53,7 +53,7 @@
 				$crud->edit_fields('user_key','first_name','last_name','father_name','email','address','password','class_id','image');
 
 				$crud->required_fields('user_key','first_name','last_name','father_name','class_id');
-				$crud->set_field_upload('image','assets/uploads');	
+				$crud->set_field_upload('image','assets/images');	
 				$crud->callback_before_insert(array($this,'set_created_at_callback'));			
 				$output = $crud->render();
 
