@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Schools</string>
+    <string name="title_home">الرئيسة</string>
+    <string name="title_dashboard">العلامات</string>
+    <string name="title_notifications">النقاط</string>
+    <string name="title_activity_login">تسجيل الدخول</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">اسم المستخدم</string>
+    <string name="prompt_password">كلمة المرور</string>
+    <string name="action_sign_in">تسجيل الدخول</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email"></string>
+    <string name="error_invalid_password"></string>
+    <string name="error_incorrect_password">خطآ في كلمة اسم المستخدم آو كلمة المرور</string>
+    <string name="error_field_required">هذا الحقل آجباري</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="dismiss">اغلاق</string>
+    <string name="ok">حسنا</string>
+    <string name="cancel">الغاء</string>
+    <string name="points">العلامة العظمى</string>
+    <string name="state">العلامة</string>
+    <string name="service">التاريخ</string>
+    <string name="total_points">المحفظة المالية</string>
+</resources>

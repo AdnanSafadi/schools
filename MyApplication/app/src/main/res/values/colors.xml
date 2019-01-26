@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#004D40</color>
+    <color name="colorPrimaryDark">#004D40</color>
+    <color name="colorAccent">#4DB6AC</color>
+    <color name="Black">#000000</color>
+
+    <color name="White">#FFFFFF</color>
+    <color name="light_grey">#bc999999</color>
+    <color name="dark_grey">#ddb6b3b3</color>
+    <color name="light_blue">#6CC2E3</color>
+    <color name="red">#E24C4B</color>
+
+    <!-- OVERWRITE THESE COLORS FOR A LIGHT THEME --><!-- MaterialDrawer DEFAULT colors -->
+    <color name="material_drawer_background">#FFEFB4
+    </color><!-- Material DEFAULT text / items colors -->
+    <color name="material_drawer_primary_text">#236F88</color>
+    <color name="material_drawer_primary_icon">#236F88</color>
+    <color name="material_drawer_divider">#236F88</color><!-- Material DEFAULT drawer colors -->
+    <color name="material_drawer_selected">#FFEFB4</color>
+    <color name="material_drawer_selected_legacy">#FFEFB4</color>
+    <color name="material_drawer_selected_text">#F4AA12</color>
+    <color name="material_drawer_header_selection_text">#FFEFB4</color>
+
+</resources>
