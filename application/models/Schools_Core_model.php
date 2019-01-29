@@ -10,9 +10,16 @@ class Schools_Core_model extends CI_Model {
 
 
 public function get_student_point($student_id){
-        $query = $this->db->query('SELECT st.id, st.material_id as materials , st.point as studentPoint ,m.point as materialPoint FROM `student_point` as st INNER JOIN materials AS m ON m.id = st.student_id WHERE st.id = '.$student_id);
+        // $query = $this->db->query('SELECT st.id, st.material_id as materials , st.point as studentPoint ,m.point as materialPoint FROM `student_point` as st INNER JOIN materials AS m ON m.id = st.student_id WHERE st.id = '.$student_id);
 
-         return $query->result();
+        //  return $query->result();
+
+         $this->db->select('student_point.id, student_point.material_id as materials , student_point.point as studentPoint ,materials.point as materialPoint');    
+         $this->db->from('student_point');
+         $this->db->join('materials', 'student_point.material_id = materials.id');
+        $this->db->where('student_point.id =', $student_id);
+        $query = $this->db->get();
+        return $query->result();
 
     }
 	
