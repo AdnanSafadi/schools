@@ -14,7 +14,7 @@ public function get_student_point($student_id){
 
         //  return $query->result();
 
-         $this->db->select('student_point.id, student_point.material_id as materials , student_point.point as studentPoint ,materials.point as materialPoint');    
+         $this->db->select('student_point.id, student_point.material_id as materials , materials.point as studentPoint ,materials.point as materialPoint');    
          $this->db->from('student_point');
          $this->db->join('materials', 'student_point.material_id = materials.id');
         $this->db->where('student_point.id =', $student_id);
