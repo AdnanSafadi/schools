@@ -14,7 +14,7 @@ public function get_student_point($student_id){
 
         //  return $query->result();
 
-         $this->db->select('student_point.id, student_point.material_id as materials , materials.point as studentPoint ,materials.point as materialPoint');    
+         $this->db->select('student_point.id, materials.material_number as materials , materials.point as studentPoint ,materials.point as materialPoint');    
          $this->db->from('student_point');
          $this->db->join('materials', 'student_point.material_id = materials.id');
         $this->db->where('student_point.student_id =', $student_id);
@@ -37,32 +37,48 @@ public function get_student_point($student_id){
          }
     }
 
-    // public function get_all_material($student_id) {
-    //     $this->db->select('*');
-    //     $this->db->from('materials');
-    //     $query = $this->db->get();
-    //     $data = $query->result();
-    //   //  die( $data );
+    public function get_all_material($student_id) {
+        $this->db->select('*');
+        $this->db->from('materials');
+        $query = $this->db->get();
+        $data = $query->result();
+       // die( $data['id'] );
 
-    //     foreach ($variable as $data) {
-    //         die($variable['id'])
-    //        $check_student =  $this->checkIfIsExistInStudentPoint($student_id,$variable['id']);
-    //        if (sizeof($check_student) != 0) {
-    //         $variable['done'] = 'blah';
-    //        }
-    //     }
+        foreach ($data as $variable) {
+           
+           $check_student =  $this->checkIfIsExistInStudentPoint($student_id,$variable->id);
+           //die($check_student);
+           if ($check_student) {
+            $variable->updated_at = true;
+           }
+        }
+        return $data;
+    }
 
-    //     return $data;
-    // }
+    public function get_student_data_model($student_id) {
+       $this->db->select('*');
+       $this->db->from('student');
+       $this->db->where('user_key =',$student_id);
+       $query = $this->db->get();
+       return $data = $query->result();
+   }
 
-    // private function checkIfIsExistInStudentPoint($student_id,$material_id){
-    //     $this->db->select('*');
-    //     $this->db->from('student_point');
-    //     $this->db->where('student_id =', $student_id);
-    //     $this->db->where('material_id =', $material_id);
-    //     $query = $this->db->get();
-    //     $data = $query->result();
-    // }
+    private function checkIfIsExistInStudentPoint($student_id,$material_id){
+        $this->db->select('*');
+        $this->db->from('student_point');
+        $this->db->where('student_id =', $student_id);
+        $this->db->where('material_id =', $material_id);
+        $query = $this->db->get();
+
+        // $data = $query->result();
+        if ($query->num_rows() != 1) {
+                    // there should only be one row - anything else is an error
+            return false;
+        }else {
+            return true;
+        }
+        
+    }
 
 
 }

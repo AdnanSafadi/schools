@@ -57,12 +57,20 @@ public function check_student_auth() {
     echo json_encode($out); 
 }
 
-// public function get_all_material(){
-// 	$student_id = 1;
-// 	$output = $this->Schools_Core_model->get_all_material(1);
-//     $out = array('data' => $output ,'status' => true, 'message' => '');
-//     echo json_encode($out);
-// }
+public function get_all_material(){
+	$student_id = $this->input->post("student_id"); 
+	$output = $this->Schools_Core_model->get_all_material($student_id);
+    $out = array('data' => $output ,'status' => true, 'message' => '');
+    echo json_encode($out);
+}
+
+
+public function get_student_data(){
+	$student_id = $this->input->post("student_id"); 
+	$output = $this->Schools_Core_model->get_student_data_model($student_id);
+    $out = array('data' => $output ,'status' => true, 'message' => '');
+    echo json_encode($out);
+}
 
 	
 }
