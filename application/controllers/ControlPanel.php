@@ -164,8 +164,8 @@
 				$crud->set_theme('flexigrid');
 				$crud->set_table('student_point');
 				$crud->set_subject('Student Point');
-				$crud->columns('id','student_id','material_id','point');
-				$crud->set_relation('student_id','student','user_key');
+				$crud->columns('id','student_id','material_id');
+				$crud->set_relation('student_id','student','{first_name} {last_name}');
 				$crud->set_relation('material_id','materials','name');
 				$output = $crud->render();
 
@@ -186,7 +186,7 @@
 				$crud->set_table('student_point_log');
 				$crud->set_subject('Student Point Log');
 				$crud->columns('id','student_id','points','reason');
-				$crud->set_relation('student_id','student','first_name');
+				$crud->set_relation('student_id','student','{first_name} {last_name}');
 				$crud->unset_add()->unset_delete()->unset_edit();
 				$output = $crud->render();
 
