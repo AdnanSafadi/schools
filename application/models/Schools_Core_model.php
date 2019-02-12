@@ -17,7 +17,7 @@ public function get_student_point($student_id){
          $this->db->select('student_point.id, materials.material_number as materials , materials.point as studentPoint ,materials.point as materialPoint');    
          $this->db->from('student_point');
          $this->db->join('materials', 'student_point.material_id = materials.id');
-          $this->db->join('student', 'student.id = student_point.student_id');
+         $this->db->join('student', 'student.id = student_point.student_id');
         $this->db->where('student.user_key =', $student_id);
         $query = $this->db->get();
         return $query->result();
@@ -67,7 +67,8 @@ public function get_student_point($student_id){
     private function checkIfIsExistInStudentPoint($student_id,$material_id){
         $this->db->select('*');
         $this->db->from('student_point');
-        $this->db->where('student_id =', $student_id);
+        $this->db->join('student', 'student.id = student_point.student_id');
+        $this->db->where('student.user_key =', $student_id);
         $this->db->where('material_id =', $material_id);
         $query = $this->db->get();
 
