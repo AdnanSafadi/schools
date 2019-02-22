@@ -14,7 +14,7 @@ class Schools_Core_model extends CI_Model {
 
         //  return $query->result();
 
-   $this->db->select('student_point.id, materials.material_number as materials , materials.point as studentPoint ,materials.point as materialPoint');    
+   $this->db->select('materials.material_number as materials , materials.point as studentPoint ,student_point.reason,student_point.created_at');    
    $this->db->from('student_point');
    $this->db->join('materials', 'student_point.material_id = materials.id');
    $this->db->join('student', 'student.id = student_point.student_id');
@@ -99,7 +99,7 @@ if (empty($reason)) {
     'created_at' =>  date('Y/m/d H:i:s')
   );
   $query =  $this->db->insert('student_point', $data);
-  return ($this->db->affected_rows() != 1) ?  array('data' => '' ,'status' => false, 'message' > 'يرجى المحاولة لاحقا') : array('data' => '' ,'status' => true, 'message' > '');
+  return ($this->db->affected_rows() != 1) ?  array('data' => '' ,'status' => false, 'message' => 'يرجى المحاولة لاحقا') : array('data' => '' ,'status' => true, 'message' => '');
 
 }else {
   $data = array('student_id' => $student_data[0]->id,
@@ -109,7 +109,7 @@ if (empty($reason)) {
     'created_at' =>  date('Y/m/d H:i:s')
   );
   $query =  $this->db->insert('student_point', $data);
-  return ($this->db->affected_rows() != 1) ? array('data' => '' ,'status' => false, 'message' > 'يرجى المحاولة لاحقا') : array('data' => '' ,'status' => true, 'message' > '');
+  return ($this->db->affected_rows() != 1) ? array('data' => '' ,'status' => false, 'message' => 'يرجى المحاولة لاحقا') : array('data' => '' ,'status' => true, 'message' => '');
 }
 
 }
