@@ -74,35 +74,46 @@ public function set_student_point_model($student_id, $material_num, $point,$reas
  $data = $query->result();
 
 
- $this->db->select('id');
+ $this->db->select('id,user_key');
  $this->db->from('student');
  $this->db->where('user_key =', $student_id);
  $student_query = $this->db->get();
  $student_data = $student_query->result();
 
  if (empty($data) || empty($student_data)) {
-  return false;
+  $out = array('data' => '' ,'status' => false, 'message' =>  'الرجاء التاكد من رقم الطالب أو رقم المادة');
+  return $out;
 }
+
+ if ($this->checkIfIsExistInStudentPoint($student_data[0]->user_key,$data[0]->id)) {
+  $out = array('data' => '' ,'status' => false, 'message'=>  'المادة موجودة مسبقا');
+    return $out;
+ }
+
+
 if (empty($reason)) {
   $data = array('student_id' => $student_data[0]->id,
     'material_id' => $data[0]->id,
     'point' => $data[0]->point,
-    'reason' => ''
+    'reason' => '',
+    'created_at' =>  date('Y/m/d H:i:s')
   );
   $query =  $this->db->insert('student_point', $data);
-  return ($this->db->affected_rows() != 1) ? false : true;
+  return ($this->db->affected_rows() != 1) ?  array('data' => '' ,'status' => false, 'message' > 'يرجى المحاولة لاحقا') : array('data' => '' ,'status' => true, 'message' > '');
 
 }else {
   $data = array('student_id' => $student_data[0]->id,
     'material_id' => $data[0]->id,
     'point' => $point,
-    'reason' => $reason
+    'reason' => $reason,
+    'created_at' =>  date('Y/m/d H:i:s')
   );
   $query =  $this->db->insert('student_point', $data);
-  return ($this->db->affected_rows() != 1) ? false : true;
+  return ($this->db->affected_rows() != 1) ? array('data' => '' ,'status' => false, 'message' > 'يرجى المحاولة لاحقا') : array('data' => '' ,'status' => true, 'message' > '');
 }
 
 }
+
 
 private function checkIfIsExistInStudentPoint($student_id,$material_id){
   $this->db->select('*');

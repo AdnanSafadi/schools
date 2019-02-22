@@ -80,13 +80,13 @@ class Api extends CI_Controller {
 
 		$data = $this->Schools_Core_model->set_student_point_model($student_id, $material_num, $point,$reason);
 
-		if ($data == false) {
-			$out = array('data' => '' ,'status' => false, 'message' => '');
-		}else {
-			$out = array('data' => $data ,'status' => true, 'message' => '');
-		}
+		// if ($data == false) {
+		// 	$out = array('data' => '' ,'status' => false, 'message' => '');
+		// }else {
+		// 	$out = array('data' => $data ,'status' => true, 'message' => '');
+		// }
 
-		echo json_encode($out);
+		echo json_encode($data);
 	}
 
 	
