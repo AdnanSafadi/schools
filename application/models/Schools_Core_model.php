@@ -25,7 +25,7 @@ class Schools_Core_model extends CI_Model {
  }
 
  public function check_student($student_id,$password){
-  $this->db->select('user_key,first_name,last_name,father_name,email,address,image');
+  $this->db->select('user_key,first_name,last_name,father_name,email,address,image,class_id');
   $this->db->from('student');
   $this->db->where('user_key =', $student_id);
   $this->db->where('password =', $password);
