@@ -18,7 +18,7 @@ class Schools_Core_model extends CI_Model {
    $this->db->from('student_point');
    $this->db->join('materials', 'student_point.material_id = materials.id');
    $this->db->join('student', 'student.id = student_point.student_id');
-   $this->db->where('student_point.student_id =', $student_id);
+   $this->db->where('student.user_key =', $student_id);
    $query = $this->db->get();
    return $query->result();
 
