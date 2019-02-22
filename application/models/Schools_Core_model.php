@@ -73,7 +73,17 @@ public function set_student_point_model($student_id, $material_num, $point,$reas
  $query = $this->db->get();
  $data = $query->result();
 
- if (empty($reason)) {
+
+ $this->db->select('id');
+ $this->db->from('student');
+ $this->db->where('user_key =', $student_id);
+ $student_query = $this->db->get();
+ $student_data = $student_query->result();
+
+ if (empty($data) || empty($student_data)) {
+  return false;
+}
+if (empty($reason)) {
   $data = array('student_id' => $student_id,
     'material_id' => $data[0]->id,
     'point' => $data[0]->point,
