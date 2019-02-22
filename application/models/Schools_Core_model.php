@@ -84,7 +84,7 @@ public function set_student_point_model($student_id, $material_num, $point,$reas
   return false;
 }
 if (empty($reason)) {
-  $data = array('student_id' => $student_id,
+  $data = array('student_id' => $student_data[0]->id,
     'material_id' => $data[0]->id,
     'point' => $data[0]->point,
     'reason' => ''
@@ -93,7 +93,7 @@ if (empty($reason)) {
   return ($this->db->affected_rows() != 1) ? false : true;
 
 }else {
-  $data = array('student_id' => $student_id,
+  $data = array('student_id' => $student_data[0]->id,
     'material_id' => $data[0]->id,
     'point' => $point,
     'reason' => $reason
