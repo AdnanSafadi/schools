@@ -107,9 +107,6 @@
 			}
 		}
 
-
-		
-
 		public function materials()
 		{
 			try{
@@ -164,9 +161,10 @@
 				$crud->set_theme('flexigrid');
 				$crud->set_table('student_point');
 				$crud->set_subject('Student Point');
-				$crud->columns('id','student_id','material_id');
+				$crud->columns('id','student_id','material_id','quran_id');
 				$crud->set_relation('student_id','student','{first_name} {last_name}');
 				$crud->set_relation('material_id','materials','name');
+				$crud->set_relation('quran_id','quran','name');
 				$output = $crud->render();
 
 				$this->_example_output($output);
@@ -197,6 +195,22 @@
 			}
 		}
 
+		public function quran(){
+			try{
+				$crud = new grocery_CRUD();
+
+				$crud->set_theme('flexigrid');
+				$crud->set_table('quran');
+				$crud->set_subject('Quran');
+				$crud->columns('name','point','quran_key');
+				$output = $crud->render();
+
+				$this->_example_output($output);
+
+			}catch(Exception $e){
+				show_error($e->getMessage().' --- '.$e->getTraceAsString());
+			}
+		}
 
 		function set_created_at_callback($post_array) {
 		
