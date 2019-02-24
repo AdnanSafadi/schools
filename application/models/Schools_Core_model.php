@@ -135,3 +135,9 @@ private function checkIfIsExistInStudentPoint($student_id,$material_id){
 
 
 }
+
+
+// SELECT
+//   *,(SELECT CASE  WHEN MAX(SQ.quran_id)+ 1 >=  Q.id THEN 'true' ELSE 'false' end FROM student_quran as SQ WHERE SQ.student_id = 12) as av
+// FROM
+//   quran AS Q
